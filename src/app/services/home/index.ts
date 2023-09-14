@@ -1,0 +1,1 @@
+export { useGetMoviesQuery } from "./home";

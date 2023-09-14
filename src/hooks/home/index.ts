@@ -1,0 +1,1 @@
+export { useGetMoviesHook } from "./getMoviesHook";
