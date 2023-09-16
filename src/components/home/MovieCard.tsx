@@ -2,31 +2,15 @@
 import { getUTCTime } from "../../utils";
 import IMDBIcon from "../../assets/home/imdb.svg";
 import fruitIcon from "../../assets/home/fruit.svg";
-
-const data = {
-    "adult": false,
-    "backdrop_path": "/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
-    "genre_ids": [
-        35,
-        12,
-        14
-    ],
-    "id": 346698,
-    "original_language": "en",
-    "original_title": "Barbie",
-    "overview": "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.",
-    "popularity": 3661.8,
-    "poster_path": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
-    "release_date": "2023-07-19",
-    "title": "Barbie",
-    "video": false,
-    "vote_average": 7.3,
-    "vote_count": 4286
-}
+import { FeaturedMovieType } from "../../data/home";
 
 const baseImageUrl = "https://image.tmdb.org/t/p/w342";
 
-export const MovieCard: React.FC = () => {
+type MovieCardType = {
+    data: FeaturedMovieType
+}
+
+export const MovieCard: React.FC<MovieCardType> = ({data}) => {
 
     const { year, month, day } = getUTCTime(data.release_date)
 
